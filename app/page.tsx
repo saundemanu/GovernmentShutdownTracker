@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import '../styles.css'; 
 
 const calculateCountdown = () => {
   const shutdownDate = new Date(Date.UTC(2023, 9, 1)); // October is month 9 (0-based index)
@@ -40,30 +41,32 @@ export default function Home() {
         <div className="text-center">
           <h1 className="text-8xl font-bold mb-4">Government Shutdown Countdown</h1>
           <div className="flex gap-5 w-full justify-center mt-16">
-  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+          <div className="grid grid-cols-4 gap-4">
+  <div className="flex flex-col items-center bg-neutral p-4 rounded-box text-neutral-content custom-value">
     <span className="countdown font-mono text-8xl">
-      <span style={{"--value": countdown ? countdown.days : 0}}></span>
+      <span style={{ "--value": countdown ? countdown.days : 0 }}></span>
     </span>
-    <span>days</span>
-  </div> 
-  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-    <span className="countdown font-mono text-8xl">
-      <span style={{"--value": countdown ? countdown.hours : 0}}></span>
-    </span>
-    <span>hours</span>
-  </div> 
-  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-    <span className="countdown font-mono text-8xl">
-      <span style={{"--value": countdown ? countdown.minutes : 0}}></span>
-    </span>
-    <span>min</span>
-  </div> 
-  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-    <span className="countdown font-mono text-8xl">
-      <span style={{"--value": countdown ? countdown.seconds : 0}}></span>
-    </span>
-    <span>sec</span>
+    <span className="text-xl mt-2">days</span>
   </div>
+  <div className="flex flex-col items-center bg-neutral p-4 rounded-box text-neutral-content custom-value">
+    <span className="countdown font-mono text-8xl">
+      <span style={{ "--value": countdown ? countdown.hours : 0 }}></span>
+    </span>
+    <span className="text-xl mt-2">hours</span>
+  </div>
+  <div className="flex flex-col items-center bg-neutral p-4 rounded-box text-neutral-content custom-value">
+    <span className="countdown font-mono text-8xl">
+      <span style={{ "--value": countdown ? countdown.minutes : 0 }}></span>
+    </span>
+    <span className="text-xl mt-2">minutes</span>
+  </div>
+  <div className="flex flex-col items-center bg-neutral p-4 rounded-box text-neutral-content custom-value">
+    <span className="countdown font-mono text-8xl">
+      <span style={{ "--value": countdown ? countdown.seconds : 0 }}></span>
+    </span>
+    <span className="text-xl mt-2">seconds</span>
+  </div>
+</div>
 </div>
         </div>
       )}
