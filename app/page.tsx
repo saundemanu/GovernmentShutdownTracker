@@ -38,10 +38,34 @@ export default function Home() {
       {/* ... Existing JSX ... */}
       {countdown !== null && (
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Government Shutdown Countdown</h1>
-          <p className="text-2xl">
-            {countdown.days} days, {countdown.hours} hours, {countdown.minutes} minutes, {countdown.seconds} seconds remaining
-          </p>
+          <h1 className="text-8xl font-bold mb-4">Government Shutdown Countdown</h1>
+          <div className="flex gap-5">
+  <div>
+    <span className="countdown font-mono text-8xl">
+      <span style={{"--value": countdown ? countdown.days : 0}}></span>
+    </span>
+    <span>days</span>
+  </div> 
+  <div>
+    <span className="countdown font-mono text-8xl">
+      <span style={{"--value": countdown ? countdown.hours : 0}}></span>
+    </span>
+    <span>hours</span>
+  </div> 
+  <div>
+    <span className="countdown font-mono text-8xl">
+      <span style={{"--value": countdown ? countdown.minutes : 0}}></span>
+    </span>
+    <span>min</span>
+  </div> 
+  <div>
+    <span className="countdown font-mono text-8xl">
+      <span style={{"--value": countdown ? countdown.seconds : 0}}></span>
+    </span>
+    <span>sec</span>
+  </div>
+</div>
+
         </div>
       )}
     </main>
