@@ -39,33 +39,32 @@ export default function Home() {
       {countdown !== null && (
         <div className="text-center">
           <h1 className="text-8xl font-bold mb-4">Government Shutdown Countdown</h1>
-          <div className="flex gap-5">
-  <div>
+          <div className="flex gap-5 w-full justify-center mt-16">
+  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
     <span className="countdown font-mono text-8xl">
       <span style={{"--value": countdown ? countdown.days : 0}}></span>
     </span>
     <span>days</span>
   </div> 
-  <div>
+  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
     <span className="countdown font-mono text-8xl">
       <span style={{"--value": countdown ? countdown.hours : 0}}></span>
     </span>
     <span>hours</span>
   </div> 
-  <div>
+  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
     <span className="countdown font-mono text-8xl">
       <span style={{"--value": countdown ? countdown.minutes : 0}}></span>
     </span>
     <span>min</span>
   </div> 
-  <div>
+  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
     <span className="countdown font-mono text-8xl">
       <span style={{"--value": countdown ? countdown.seconds : 0}}></span>
     </span>
     <span>sec</span>
   </div>
 </div>
-
         </div>
       )}
     </main>
