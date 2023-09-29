@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { setupDatabase, createShutdownTimesTable, insertShutdownTime } from '../lib/db';
 
 const calculateCountdown = () => {
   const shutdownDate = new Date(Date.UTC(2023, 9, 1)); // October is month 9 (0-based index)
@@ -19,19 +18,6 @@ const calculateCountdown = () => {
 };
 
 export default function Home() {
-
-  useEffect(() => {
-    (async () => {
-      const db = await setupDatabase();
-      await createShutdownTimesTable(db);
-      try {
-        await insertShutdownTime(db, '2023-10-01', 'Government Funding Expiration');
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
-
   const [countdown, setCountdown] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(
     null
   );
@@ -49,6 +35,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      {/* ... Existing JSX ... */}
       {countdown !== null && (
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Government Shutdown Countdown</h1>
