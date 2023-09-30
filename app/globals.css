@@ -25,33 +25,19 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-/* styles/globals.css */
 
-@keyframes gradientAnimation {
-  0% {
-      background: linear-gradient(45deg, #9e0000, #d32f2f);
-      background-size: 200% 200%;
-      background-position: 0% 50%;
-    }
-    25% {
-      background: linear-gradient(0deg, #9e0000, #d32f2f);
-      background-size: 200% 200%;
-      background-position: 50% 50%;
-    }
-    50% {
-      background: linear-gradient(-45deg, #9e0000, #d32f2f);
-      background-size: 200% 200%;
-      background-position: 100% 50%;
-    }
-    75% {
-      background: linear-gradient(0deg, #9e0000, #d32f2f);
-      background-size: 200% 200%;
-      background-position: 50% 50%;
-    }
-    100% {
-      background: linear-gradient(45deg, #9e0000, #d32f2f);
-      background-size: 200% 200%;
-      background-position: 0% 50%;
-    }
+@keyframes float {
+    0%, 100% {
+    background-position: 50% 50%;
+    background-size: 140% 140%; /* Adjust the size for a smaller highlight */
+  }
+  50% {
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+  }
+}
+
+.animate-float {
+  animation: float 3s infinite;
 }
 
