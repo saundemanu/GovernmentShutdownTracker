@@ -1,4 +1,6 @@
 'use client'
+import './globals.css';
+import GradientBackground from './gradientbackground';
 import React, { useState, useEffect } from 'react';
 
 const calculateCountdown = () => {
@@ -35,31 +37,31 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* ... Existing JSX ... */}
-      {countdown !== null && (
+      <GradientBackground />
+              {countdown !== null && (
         <div className="text-center">
           <h1 className="text-8xl font-bold mb-4">Government Shutdown Countdown</h1>
           <div className="flex gap-5 w-full justify-center mt-16">
-          <div className="grid grid-cols-4 gap-4 custom-value">
-  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content custom-value">
+          <div className="grid grid-cols-4 gap-4 ">
+  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content ">
     <span className="countdown font-mono text-8xl">
       <span style={{ "--value": countdown ? countdown.days : 0 } as React.CSSProperties}></span>
     </span>
     <span className="text-xl mt-2">days</span>
   </div>
-  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content custom-value">
+  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content ">
     <span className="countdown font-mono text-8xl">
       <span style={{ "--value": countdown ? countdown.hours : 0 } as React.CSSProperties}></span>
     </span>
     <span className="text-xl mt-2">hours</span>
   </div>
-  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content custom-value">
+  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content ">
     <span className="countdown font-mono text-8xl">
       <span style={{ "--value": countdown ? countdown.minutes : 0 } as React.CSSProperties}></span>
     </span>
     <span className="text-xl mt-2">minutes</span>
   </div>
-  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content custom-value">
+  <div className="flex flex-col items-center bg-neutral p-8 rounded-box text-neutral-content ">
     <span className="countdown font-mono text-8xl">
       <span style={{ "--value": countdown ? countdown.seconds : 0 } as React.CSSProperties}></span>
     </span>
