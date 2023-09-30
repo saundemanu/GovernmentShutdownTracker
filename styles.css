@@ -1,7 +1,0 @@
-.custom-value {
-    --value: 0;
-  }
-  
-  span.countdown-item span {
-    font-size: var(--value, 1em);
-  }
