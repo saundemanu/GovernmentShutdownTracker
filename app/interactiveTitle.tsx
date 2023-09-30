@@ -1,10 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 
-const InteractiveTitle = ({ text }) => {
-  const titleRef = useRef(null);
 
+interface InteractiveTitleProps {
+    text: string;
+  }
+  
+  const InteractiveTitle: React.FC<InteractiveTitleProps> = ({ text }) => {
+    const titleRef =  useRef<HTMLHeadingElement>(null);
+  
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
+    if(titleRef.current){
       const { clientX, clientY } = e;
       const { left, top, width, height } = titleRef.current.getBoundingClientRect();
       const xPercentage = (clientX - left) / width;
@@ -12,7 +18,8 @@ const InteractiveTitle = ({ text }) => {
       const xOffset = (xPercentage - 0.5) * 40;
       const yOffset = (yPercentage - 0.5) * 40;
       const shadow = `${xOffset}px ${yOffset}px 20px rgba(0, 0, 0, 0.5)`;
-      titleRef.current.style.textShadow = shadow; // Apply text shadow
+      titleRef.current.style.textShadow = shadow; 
+        }
     };
     document.addEventListener('mousemove', handleMouseMove);
 

@@ -1,12 +1,10 @@
-// GradientBackground.tsx
-
 import React, { useState, useEffect } from 'react';
 
 const GradientBackground = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const updateMousePosition = (e) => {
+    const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
