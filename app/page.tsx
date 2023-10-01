@@ -4,7 +4,7 @@ import GradientBackground from './gradientbackground';
 import InteractiveTitle from './interactiveTitle';
 
 const calculateCountdown = () => {
-  const shutdownDate = new Date(Date.UTC(2023, 9, 1));
+  const shutdownDate = new Date(Date.UTC(2023, 11, 17));
   const now = new Date();
   const timeDifference = shutdownDate.getTime() - now.getTime();
 
